@@ -1,22 +1,28 @@
 # Windows Dotfiles | AI Agent Rules
 
 ## PROJECT OVERVIEW
-Windows dotfiles repository with WinGet DSC automation, VS Code configuration, and PowerShell setup.
+This repository manages Windows dotfiles, featuring WinGet DSC automation, VS Code configuration, and PowerShell setup.
 
-## WINGET DSC MANAGEMENT
-- **Install**: `winget configure -f config.dsc.yaml` (installs all packages from DSC configuration)
-- **Structure**: Organized sections (AI tools, Development, Internet, Media, System, Utilities, Gaming)
-- **Organization**: Maintain existing categorization, use descriptive comments, group related packages
+## GENERAL GUIDELINES
+- **Windows Expertise**: AI agents should possess strong knowledge of Windows systems and configurations.
+- **Best Practices**: Always recommend solutions that align with native Windows design and best practices.
+- **Prevent Misconfigurations**: Guide users, especially those new to Windows, away from actions that contradict Windows design principles or lead to suboptimal configurations.
 
-### AI Instructions for WinGet DSC Configuration
-When working with this project's DSC configuration, AI agents should:
-1. **Understand the structure**: The config.dsc.yaml uses WinGet DSC syntax with organized sections for different application categories
-2. **Respect the organization**: Maintain the existing categorization and commenting structure when adding new packages
-3. **Follow naming conventions**: Use descriptive comments and group related packages together
-4. **Consider dependencies**: Some packages require additional setup steps (noted in comments)
-5. **Use proper syntax**: Follow WinGet DSC syntax for different package types
+## WINGET DSC CONFIGURATION
 
-### WinGet DSC Syntax Reference
+### Management & Organization
+- **Install**: Use `winget configure -f config.dsc.yaml` to install packages.
+- **Structure**: Categories include AI tools, Development, Internet, Media, System, Utilities, and Gaming.
+- **Guidelines**: Maintain existing categorization, use descriptive comments, and group related packages.
+- **Dependencies**: Note any packages requiring additional setup.
+
+### AI Agent Instructions
+- **Understand Structure**: Recognize WinGet DSC syntax and category-based organization in `config.dsc.yaml`.
+- **Respect Organization**: Preserve existing categories and commenting when adding new packages.
+- **Follow Naming**: Use descriptive comments and group related packages.
+- **Proper Syntax**: Adhere to WinGet DSC syntax for various package types.
+
+### Syntax Reference
 ```yaml
 # WinGet packages (applications)
 - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -34,45 +40,63 @@ When working with this project's DSC configuration, AI agents should:
   settings: { id: Publisher.PackageName, version: "1.0.0" }
 ```
 
-### Microsoft Store Dependencies
-When adding Microsoft Store apps to the DSC configuration:
-1. **Extract app information from Microsoft Store URLs**:
-   - URL format: `https://apps.microsoft.com/detail/{app-id}`
-   - Extract numeric app ID from URL (e.g., `9NT1R1C2HH7J` from `/detail/9NT1R1C2HH7J`)
-2. **Add to DSC config using WinGet syntax**: `{ id: 9NT1R1C2HH7J }`
-3. **Example transformation**:
-   - Input URL: `https://apps.microsoft.com/detail/9NT1R1C2HH7J`
-   - DSC entry: `{ id: 9NT1R1C2HH7J }`
-4. **Placement**: Add Microsoft Store apps in the appropriate section based on category
+### Microsoft Store App Integration
+- **Extraction**: Extract numeric app IDs from Microsoft Store URLs (e.g., `9NT1R1C2HH7J` from `https://apps.microsoft.com/detail/9NT1R1C2HH7J`).
+- **DSC Entry**: Add using `{ id: 9NT1R1C2HH7J }` in the appropriate category.
 
 ## VS CODE CONFIGURATION
-- **Extensions**: Managed via PowerShell script (vscode-extensions.ps1)
+- **Extensions**: Managed via `vscode-extensions.ps1` PowerShell script.
 
 ## POWERSHELL CONFIGURATION
-- **Execution Policy**: RemoteSigned for local scripts
-- **Scripts**: Automation scripts for system configuration
+- **Execution Policy**: `RemoteSigned` for local scripts.
+- **Scripts**: Automation scripts for system configuration.
 
 ## PATTERNS
-- **DSC Configuration**: Group by category with clear section headers
-- **VS Code**: Extensions installed via PowerShell script
-- **Shell**: PowerShell with custom profile and modules
-- **Git**: Rebase-based workflow with custom aliases
+- **DSC**: Group by category with clear headers.
+- **VS Code**: Extensions installed via PowerShell script.
+- **Shell**: PowerShell with custom profile and modules.
+- **Git**: Rebase-based workflow with custom aliases.
 
 ## SECURITY
-- Standard dotfiles patterns (no sensitive data)
-- Git configuration includes safe defaults
-- VS Code settings use standard security practices
-- PowerShell execution policy configured for security
+- Standard dotfiles patterns; no sensitive data.
+- Git configuration uses safe defaults.
+- VS Code settings follow standard security practices.
+- PowerShell execution policy is configured for security.
 
 ## GIT CONVENTIONS
-- **Commit Format**: Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification
-- **Structure**: `<type>[optional scope]: <description>`
-- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`, `build`
-- **Breaking Changes**: Use `!` after type/scope or `BREAKING CHANGE:` footer
-- **Examples**: 
-  - `feat: add new VS Code extension`
-  - `fix(brewfile): correct package name`
-  - `docs: update installation instructions`
-  - `feat!: remove deprecated configuration`
-- **Workflow**: Rebase-based (`p` alias pulls with rebase)
-- **Aliases**: Custom aliases for common operations
+### Commit Format
+- Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- **Structure**: `<type>[optional scope]: <description>`.
+- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`, `ci`, `build`.
+- **Breaking Changes**: Use `!` after type/scope or `BREAKING CHANGE:` footer.
+- **Examples**: `feat: add new VS Code extension`, `fix(brewfile): correct package name`.
+
+### Workflow
+- **Rebase-based**: (`p` alias pulls with rebase).
+- **Aliases**: Custom aliases for common operations.
+
+## GITHUB FLAVORED MARKDOWN (GFM)
+### Documentation Guidelines
+- All markdown files use [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+- All documentation (including `README.md` and code comments) in the repository must follow Microsoft Documentation Guidelines.
+- **Mermaid Diagrams**: Supported for flowcharts, sequence diagrams, etc.
+- **Alert Blocks**: Use GitHub's alert syntax (e.g., `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`).
+- **Reference**: [GitHub Alerts Documentation](https://github.com/orgs/community/discussions/16925#discussion-4085374).
+
+### Mermaid Diagram Guidelines
+- **Syntax**: Use fenced code blocks with ````mermaid`.
+- **Renderability**: All diagrams must render on GitHub.
+- **Testing**: Test diagrams on GitHub before finalizing.
+- **Supported Types**: Flowcharts, Sequence, Gantt, Class, State, ER, Pie, Requirement, Journey, GitGraph, Mindmap, Timeline.
+
+### Mermaid Limitations
+- No Markdown lists within node definitions.
+- Not supported in GitHub Wikis.
+- Security sandboxing limits interactive functionality.
+- Complex diagrams may have inconsistent rendering.
+- Rendering may vary across platforms.
+
+### Mermaid Best Practices
+- Test diagrams on GitHub.
+- Avoid Markdown lists in nodes; use simple text.
+- Reference [Mermaid Documentation](https://github.com/mermaid-js/mermaid`).
