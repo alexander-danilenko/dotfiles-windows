@@ -1,0 +1,135 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# winget configuration file
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    # --- AI ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: chatgpt
+      settings: { id: 9NT1R1C2HH7J }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: claude
+      settings: { id: Anthropic.Claude }
+
+    # --- Development ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vscode
+      settings: { id: Microsoft.VisualStudioCode }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: cursor
+      settings: { id: Anysphere.Cursor }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: git
+      settings: { id: Git.Git }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: jetbrains-toolbox
+      settings: { id: JetBrains.Toolbox }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: node
+      settings: { id: OpenJS.NodeJS.LTS }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: python
+      settings: { id: Python.Python.3.14}
+
+    # --- Internet ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 1password
+      settings: { id: XP99C9G0KRDZ27 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: brave
+      settings: { id: XP8C9QZMS2PC1T }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: discord
+      settings: { id: XPDC2RH70K22MN }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: chrome
+      settings: { id: Google.Chrome }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: firefox
+      settings: { id: 9NZVDKPMR9RD }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: slack
+      settings: { id: 9WZDNCRDK3WP }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: telegram
+      settings: { id: 9NZTWSQNTD0S }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vivaldi
+      settings: { id: XP99GVQDX7JPR4 }
+
+    # --- Media ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: k-lite-codec-pack
+      settings: { id: CodecGuide.K-LiteCodecPack.Mega }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: handbrake
+      settings: { id: HandBrake.HandBrake }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: hevc
+      settings: { id: 9NMZLZ57R3T7 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: av1
+      settings: { id: 9MVZQVXJBQ9V }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vlc
+      settings: { id: XPDM1ZW6815MQM }
+
+    # --- System ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: disk-info
+      settings: { id: CrystalDewWorld.CrystalDiskInfo }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: disk-mark
+      settings: { id: CrystalDewWorld.CrystalDiskMark }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: hwinfo
+      settings: { id: REALiX.HWiNFO }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: rufus
+      settings: { id: 9PC3H3V7Q9CH }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: synology-drive
+      settings: { id: Synology.DriveClient }
+
+    # --- Utilities ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 7zip
+      settings: { id: 7zip.7zip }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: pc-manager
+      settings: { id: 9PM860492SZD }
+
+    # --- Gaming ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: steam
+      settings: { id: Valve.Steam }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: epic-games
+      settings: { id: EpicGames.EpicGamesLauncher }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: battle-net
+      settings: { id: Blizzard.BattleNet }
