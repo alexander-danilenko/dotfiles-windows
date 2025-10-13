@@ -121,6 +121,10 @@ properties:
       id: pc-manager
       settings: { id: 9PM860492SZD }
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: shutup10
+      settings: { id: OOSoftware.ShutUp10 }
+
     # --- Gaming ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: steam
