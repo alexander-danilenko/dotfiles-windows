@@ -24,6 +24,8 @@ A secure, reproducible Windows 11 setup for development and productivity.
 
 ## 💿 Windows 11 Installation Media
 
+Get your Windows 11 installation ready with clean, bloatware-free media that ensures a smooth setup experience. Using the right installation source prevents unnecessary software and provides a solid foundation for your system. Download the ISO and create a bootable USB drive following the simple steps below.
+
 ### 📥 Download Windows 11 ISO image
 
 **Download Windows 11 ISO** file from one of two sources:
@@ -44,15 +46,17 @@ A secure, reproducible Windows 11 setup for development and productivity.
 
 ## ⚡ Quick Setup
 
+Set up your Windows 11 system for development and productivity with these essential post-installation steps. These configurations establish the security policies, package management, and development tools that will serve as your system's foundation. Work through these steps in order to avoid common setup issues and get everything running smoothly.
+
 ### 🔑 Windows Activation
 
 > [!CAUTION]
 >
-> Use legitimate license keys!
+> Use legitimate license keys if you can! 
 > 
-> Community activation helpers are a last resort only: https://massgrave.dev/
-> 
-> **Always read and validate any scripts before running them on your local machine.**
+> Community activation script is the last resort!
+
+- https://github.com/massgravel/Microsoft-Activation-Scripts
 
 ### 🔒 PowerShell Security
 ```powershell
@@ -87,6 +91,8 @@ wsl --set-default-version 2
 
 ## ⚙️ System Configuration
 
+Fine-tune your Windows 11 system with these advanced optimizations that boost performance and resolve common issues. These settings optimize power management, fix time sync problems in dual-boot setups, and improve overall system stability. Apply these configurations after your initial setup to get the most out of your Windows experience.
+
 ### 🔋 Power Management
 ```powershell
 # Disable hibernation
@@ -104,6 +110,8 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformati
 
 ## 🔐 Privacy & Security
 
+Take control of your Windows 11 privacy and security with these essential configurations that protect your data and system integrity. These settings reduce unnecessary telemetry and data collection while keeping your system functional and secure. Use the recommended tools to customize your privacy preferences based on your specific security needs.
+
 Install O&O ShutUp10++ for privacy settings:
 ```powershell
 winget install OO-Software.ShutUp10
@@ -113,6 +121,8 @@ winget install OO-Software.ShutUp10
 > Create a system restore point before applying privacy changes.
 
 ## 🔧 Troubleshooting
+
+Find quick solutions to common Windows 11 issues that might pop up during setup or daily use. These troubleshooting steps cover frequent problems like application freezes, network issues, and authentication prompts. Keep this section handy when problems arise to get your system back on track quickly.
 
 | Issue | Solution |
 |-------|----------|
