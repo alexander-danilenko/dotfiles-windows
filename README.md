@@ -19,6 +19,7 @@ A secure, reproducible Windows 11 setup for development and productivity.
   - [🔋 Power Management](#-power-management)
   - [⏰ Dual-boot Time Sync](#-dual-boot-time-sync)
 - [🔐 Privacy \& Security](#-privacy--security)
+  - [🛡️ O\&O ShutUp10++](#️-oo-shutup10)
 - [🔧 Troubleshooting](#-troubleshooting)
 
 
@@ -35,7 +36,7 @@ Get your Windows 11 installation ready with clean, bloatware-free media that ens
 > [!TIP]
 > [massgrave.dev](https://massgrave.dev/windows_11_links) download source contains **Windows 11 Business edition**, which is recommended to use as it doesn't include consumer bloatware, Microsoft Store ads, or preinstalled games like Candy Crush.
 
-### 💾 Create Bootable USB with [Rufus](https://rufus.ie/)
+### 💾 Create Bootable USB with Rufus
 
 - Download and install [Rufus](https://rufus.ie/)
 - Insert USB drive (8GB+ recommended)
@@ -50,22 +51,28 @@ Set up your Windows 11 system for development and productivity with these essent
 
 ### 🔑 Windows Activation
 
-> [!CAUTION]
->
-> Use legitimate license keys if you can! 
-> 
-> Community activation script is the last resort!
+Activate your Windows 11 installation to unlock all features and ensure you're running a legitimate copy. While legitimate license keys are preferred, community activation tools provide an alternative when needed. 
+
+> [!IMPORTANT]
+> Always prioritize official licensing methods and use community solutions responsibly as the last resort!
 
 - https://github.com/massgravel/Microsoft-Activation-Scripts
 
 ### 🔒 PowerShell Security
+
+Configure PowerShell to run setup scripts safely while maintaining security for downloaded content. This policy allows locally created scripts to run while requiring digital signatures for scripts from the internet. Run this command to enable the configuration scripts in this guide:
+
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
 
+
 ### 📦 Package Management (WinGet)
-- Install [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) from Microsoft Store
-- Apply WinGet config by:
+
+Set up WinGet to automatically install all your essential applications from a single configuration file. This approach ensures consistent software installation across different systems and saves time during setup.
+
+- Install the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) from Microsoft Store
+- Apply WinGet config by running:
 
   ```powershell
   # Install all packages from config
@@ -75,7 +82,7 @@ Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
 
 ### 🛠️ Development Tools
 
-All tools are included in WinGet [`config.dsc.yaml`](./files/config.dsc.yaml) config file.
+Install essential development tools and VS Code extensions to create a productive coding environment. All development applications are included in the WinGet configuration, while VS Code extensions are managed separately for better control. Run the extension script to set up your preferred development tools.
 
 Install VS Code extensions:
 ```powershell
@@ -83,6 +90,9 @@ Install VS Code extensions:
 ```
 
 ### 🐧 WSL (Optional)
+
+Add Linux compatibility to your Windows system for cross-platform development and testing. WSL provides a lightweight Linux environment that integrates seamlessly with Windows while maintaining excellent performance. Install Debian as your default distribution and configure WSL 2 for the best experience.
+
 ```powershell
 wsl --install --distribution Debian
 wsl --set-default-version 2
@@ -94,6 +104,9 @@ wsl --set-default-version 2
 Fine-tune your Windows 11 system with these advanced optimizations that boost performance and resolve common issues. These settings optimize power management, fix time sync problems in dual-boot setups, and improve overall system stability. Apply these configurations after your initial setup to get the most out of your Windows experience.
 
 ### 🔋 Power Management
+
+Optimize your system's power consumption and prevent unwanted wake-ups that can drain battery or cause system instability. These settings disable hibernation and prevent devices from waking your computer unexpectedly.
+
 ```powershell
 # Disable hibernation
 powercfg.exe /hibernate off
@@ -103,6 +116,9 @@ powercfg -devicequery wake_armed | Where-Object { $_.Trim() -ne 'NONE' } | ForEa
 ```
 
 ### ⏰ Dual-boot Time Sync
+
+Fix time synchronization issues when running Windows alongside Linux in a dual-boot setup. This configuration makes Windows use UTC time instead of local time, preventing clock drift between operating systems.
+
 ```powershell
 # Set Windows to use UTC (revert with value 0)
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" -Name "RealTimeIsUniversal" -Type DWord -Value 1
@@ -110,15 +126,29 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformati
 
 ## 🔐 Privacy & Security
 
-Take control of your Windows 11 privacy and security with these essential configurations that protect your data and system integrity. These settings reduce unnecessary telemetry and data collection while keeping your system functional and secure. Use the recommended tools to customize your privacy preferences based on your specific security needs.
+Take control of your Windows 11 privacy and security with these essential configurations that protect your data and system integrity. These settings reduce unnecessary telemetry and data collection while keeping your system functional and secure.
 
-Install O&O ShutUp10++ for privacy settings:
+### 🛡️ O&O ShutUp10++
+
+Install [O&O ShutUp10++](https://www.oo-software.com/en/shutup10) for privacy settings:
 ```powershell
 winget install OO-Software.ShutUp10
 ```
 
+Run in powershell as administrator:
+
+```powershell
+shutup10.exe
+```
+
 > [!WARNING]
-> Create a system restore point before applying privacy changes.
+> Create a system restore point before applying any privacy changes.
+
+> [!TIP]
+> Use the `🟢 Only recommended settings` preset. 
+> 
+> Apply changes responsibly - make sure you read and understand what each setting does before applying it.
+
 
 ## 🔧 Troubleshooting
 
