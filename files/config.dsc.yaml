@@ -37,6 +37,10 @@ properties:
       id: python
       settings: { id: Python.Python.3.14}
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: github-cli
+      settings: { id: GitHub.cli }
+
     # --- Internet ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: 1password
