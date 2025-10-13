@@ -1,0 +1,176 @@
+# Code Editors and IDEs
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+Session.vim
+Sessionx.vim
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Atom
+.ftpconfig
+.sftpconfig
+
+# Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.project
+.classpath
+.factorypath
+.target
+.buildpath
+.cache
+.apt_generated
+.apt_generated_tests
+.apt_generated_test_sources
+.apt_generated_test_classes
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Xcode
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+project.xcworkspace/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+*.pid
+*.seed
+*.pid.lock
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.swp
+*.swo
+
+# Archive files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
