@@ -64,7 +64,7 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: telegram
-      settings: { id: 9NZTWSQNTD0S }
+      settings: { id: Telegram.TelegramDesktop }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vivaldi
