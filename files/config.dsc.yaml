@@ -127,7 +127,7 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: shutup10
-      settings: { id: OOSoftware.ShutUp10 }
+      settings: { id: "OO-Software.ShutUp10" }
 
     # --- Gaming ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
