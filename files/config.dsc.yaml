@@ -88,10 +88,6 @@ properties:
       settings: { id: HandBrake.HandBrake }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: hevc
-      settings: { id: 9NMZLZ57R3T7 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: av1
       settings: { id: 9MVZQVXJBQ9V }
 
@@ -147,6 +143,14 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: dotnet-8-desktop-runtime
       settings: { id: Microsoft.DotNet.DesktopRuntime.8 }
+
+    # - resource: Microsoft.WinGet.DSC/WinGetPackage
+    #   id: directx
+    #   settings: { id: Microsoft.DirectX }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: xna-redist
+      settings: { id: Microsoft.XNARedist }
 
     # --- Utilities ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
