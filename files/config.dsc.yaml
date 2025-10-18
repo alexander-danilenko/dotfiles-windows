@@ -150,6 +150,6 @@ properties:
       id: epic-games
       settings: { id: EpicGames.EpicGamesLauncher }
 
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: battle-net
-      settings: { id: Blizzard.BattleNet }
+    # - resource: Microsoft.WinGet.DSC/WinGetPackage
+    #   id: battle-net
+    #   settings: { id: Blizzard.BattleNet }
