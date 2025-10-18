@@ -128,6 +128,26 @@ properties:
       id: vcredist-x86
       settings: { id: Microsoft.VCRedist.2015+.x86 }
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: dotnet-3_1-runtime
+      settings: { id: Microsoft.DotNet.DesktopRuntime.3_1 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: dotnet-5-desktop-runtime
+      settings: { id: Microsoft.DotNet.DesktopRuntime.5 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: dotnet-6-desktop-runtime
+      settings: { id: Microsoft.DotNet.DesktopRuntime.6 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: dotnet-7-desktop-runtime
+      settings: { id: Microsoft.DotNet.DesktopRuntime.7 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: dotnet-8-desktop-runtime
+      settings: { id: Microsoft.DotNet.DesktopRuntime.8 }
+
     # --- Utilities ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: 7zip
