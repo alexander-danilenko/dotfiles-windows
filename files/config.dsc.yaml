@@ -144,6 +144,10 @@ properties:
       id: dotnet-8-desktop-runtime
       settings: { id: Microsoft.DotNet.DesktopRuntime.8 }
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: sysinternals
+      settings: { id: 9P7KNL5RWT25 }
+
     # - resource: Microsoft.WinGet.DSC/WinGetPackage
     #   id: directx
     #   settings: { id: Microsoft.DirectX }
@@ -168,6 +172,10 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: shutup10
       settings: { id: "OO-Software.ShutUp10" }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: lockhunter
+      settings: { id: CrystalRich.LockHunter }
 
     # --- Gaming ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
