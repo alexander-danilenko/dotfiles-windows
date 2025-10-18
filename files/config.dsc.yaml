@@ -117,11 +117,51 @@ properties:
       settings: { id: Synology.DriveClient }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-x64
+      id: vcredist-2005-x64
+      settings: { id: Microsoft.VCRedist.2005.x64 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2005-x86
+      settings: { id: Microsoft.VCRedist.2005.x86 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2008-x64
+      settings: { id: Microsoft.VCRedist.2008.x64 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2008-x86
+      settings: { id: Microsoft.VCRedist.2008.x86 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2010-x64
+      settings: { id: Microsoft.VCRedist.2010.x64 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2010-x86
+      settings: { id: Microsoft.VCRedist.2010.x86 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2012-x64
+      settings: { id: Microsoft.VCRedist.2012.x64 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2012-x86
+      settings: { id: Microsoft.VCRedist.2012.x86 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2013-x64
+      settings: { id: Microsoft.VCRedist.2013.x64 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2013-x86
+      settings: { id: Microsoft.VCRedist.2013.x86 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-2015plus-x64
       settings: { id: Microsoft.VCRedist.2015+.x64 }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-x86
+      id: vcredist-2015plus-x86
       settings: { id: Microsoft.VCRedist.2015+.x86 }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
