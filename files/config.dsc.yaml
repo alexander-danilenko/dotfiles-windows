@@ -149,6 +149,10 @@ properties:
     #   settings: { id: Microsoft.DirectX }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: openal
+      settings: { id: CreativeTechnology.OpenAL }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: xna-redist
       settings: { id: Microsoft.XNARedist }
 
