@@ -74,6 +74,10 @@ properties:
       id: vivaldi
       settings: { id: XP99GVQDX7JPR4 }
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: qbittorrent
+      settings: { id: qBittorrent.qBittorrent }
+
     # --- Media ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: k-lite-codec-pack
@@ -115,6 +119,14 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: synology-drive
       settings: { id: Synology.DriveClient }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-x64
+      settings: { id: Microsoft.VCRedist.2015+.x64 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vcredist-x86
+      settings: { id: Microsoft.VCRedist.2015+.x86 }
 
     # --- Utilities ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
