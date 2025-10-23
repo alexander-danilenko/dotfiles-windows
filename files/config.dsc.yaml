@@ -217,9 +217,9 @@ properties:
       id: lockhunter
       settings: { id: CrystalRich.LockHunter }
 
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: obsidian
-      settings: { id: Obsidian.Obsidian }
+    # - resource: Microsoft.WinGet.DSC/WinGetPackage
+    #   id: obsidian
+    #   settings: { id: Obsidian.Obsidian }
 
     # --- Gaming ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
