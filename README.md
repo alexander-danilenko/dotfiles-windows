@@ -76,8 +76,8 @@ Set up WinGet to automatically install all your essential applications from a si
 
   ```powershell
   # Install all packages from config
-  cd <repo>/files
-  winget configure --enable; winget configure --accept-configuration-agreements -f .\config.dsc.yaml
+  cd <repo>
+  winget configure --enable; winget configure --accept-configuration-agreements -f files\config.dsc.yaml
   ```
 
 ### 🛠️ Development Tools
