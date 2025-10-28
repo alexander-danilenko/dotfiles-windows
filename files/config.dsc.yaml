@@ -38,6 +38,10 @@ properties:
       settings: { id: Python.Python.3.14}
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uv
+      settings: { id: astral-sh.uv }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: github-cli
       settings: { id: GitHub.cli }
 
