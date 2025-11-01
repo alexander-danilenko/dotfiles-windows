@@ -38,6 +38,10 @@ properties:
       settings: { id: Python.Python.3.14}
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: jdk-21
+      settings: { id: EclipseAdoptium.Temurin.21.JDK }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uv
       settings: { id: astral-sh.uv }
 
