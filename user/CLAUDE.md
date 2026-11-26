@@ -20,6 +20,8 @@ Keep settings the owner chose on purpose, such as tuning, language, theme, and b
 
 ## Installing
 
+After you change anything in `user/.claude/`, ask the owner whether to apply it to `%USERPROFILE%\.claude\` too. Claude Code reads only the live folder, so a repo-only change does nothing until it's copied. Before copying, diff the live file against the last commit so that live-only edits aren't lost.
+
 Fully exit the app first. Many apps, qBittorrent included, minimize to the tray when you close the window and overwrite their config when they exit. Back up the existing file before you replace it.
 
 ## Format notes
