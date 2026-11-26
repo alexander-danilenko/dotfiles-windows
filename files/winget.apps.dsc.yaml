@@ -12,6 +12,10 @@ properties:
       id: claude
       settings: { id: Anthropic.Claude }
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: claude-code
+      settings: { id: Anthropic.ClaudeCode }
+
     # --- Development ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vscode

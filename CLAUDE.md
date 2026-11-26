@@ -22,6 +22,7 @@ Keep these files short and concrete. State the reason behind a rule instead of u
 | `user/` | Mirror of `%USERPROFILE%`. See `user/CLAUDE.md` for the path and cleanup rules |
 | `user/.gitconfig` | Git config (aliases, rebase-based pulls, `autocrlf = input`). Identity and machine-specific values go in `~/.gitconfig.local`, which isn't in the repo |
 | `README.md` | Setup guide for a fresh Windows install |
+| `assets/banner.svg` | Animated README banner |
 
 ## WinGet DSC (`files/winget.*.dsc.yaml`)
 

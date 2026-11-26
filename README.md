@@ -1,4 +1,4 @@
-<h1 align="center">🪟 Windows 11 Configuration</h1>
+<h1 align="center"><img src="assets/banner.svg" alt="🪟 Windows 11 Configuration" width="100%"></h1>
 
 A secure, reproducible Windows 11 setup for development and productivity.
 
