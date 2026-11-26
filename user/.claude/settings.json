@@ -37,23 +37,27 @@
     "typescript-lsp@claude-plugins-official": true,
     "claude-code-setup@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true,
     "plugin-dev@claude-plugins-official": true,
     "remember@claude-plugins-official": true,
-    "csharp-lsp@claude-plugins-official": true,
-    "gopls-lsp@claude-plugins-official": true,
-    "nvidia-skills@claude-plugins-official": true,
-    "cortex@alexander-danilenko": true
+    "cortex-communication@cortex-claude-code-plugins": true,
+    "cortex-knowledge@cortex-claude-code-plugins": true,
+    "cortex-jira@cortex-claude-code-plugins": true,
+    "cortex-coderabbit@cortex-claude-code-plugins": true,
+    "cortex-dotnet@cortex-claude-code-plugins": true,
+    "cortex-web@cortex-claude-code-plugins": true,
+    "cortex-python@cortex-claude-code-plugins": true,
+    "cortex-testing@cortex-claude-code-plugins": true,
+    "cortex-modernization@cortex-claude-code-plugins": true
   },
   "extraKnownMarketplaces": {
-    "alexander-danilenko": {
+    "cortex-claude-code-plugins": {
       "source": {
         "source": "github",
-        "repo": "alexander-danilenko/cortex-ai-skills"
+        "repo": "alexander-danilenko/cortex-claude-code-plugins"
       }
     }
   },
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "tui": "fullscreen",
   "autoMemoryEnabled": true,
   "autoDreamEnabled": true,
