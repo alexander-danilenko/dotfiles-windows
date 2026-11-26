@@ -91,7 +91,7 @@ Install essential development tools and VS Code extensions to create a productiv
 
 Install VS Code extensions:
 ```powershell
-.\files\vscode-extensions.ps1
+irm https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/vscode-extensions.ps1 | iex
 ```
 
 ### 🐧 WSL (Optional)
