@@ -16,15 +16,17 @@ Keep these files short and concrete. State the reason behind a rule instead of u
 
 | Path | Contents |
 |------|----------|
-| `files/config.dsc.yaml` | WinGet DSC package list |
+| `files/winget.system.dsc.yaml` | WinGet DSC: system components, languages, runtimes, codecs, redistributables |
+| `files/winget.apps.dsc.yaml` | WinGet DSC: all other apps |
 | `files/vscode-extensions.ps1` | VS Code extension installer |
 | `user/` | Mirror of `%USERPROFILE%`. See `user/CLAUDE.md` for the path and cleanup rules |
 | `user/.gitconfig` | Git config (aliases, rebase-based pulls, `autocrlf = input`). Identity and machine-specific values go in `~/.gitconfig.local`, which isn't in the repo |
 | `README.md` | Setup guide for a fresh Windows install |
 
-## WinGet DSC (`files/config.dsc.yaml`)
+## WinGet DSC (`files/winget.*.dsc.yaml`)
 
-- Add packages under the matching `# --- Category ---` header: Hardware, AI, Development, Internet, Media, System, Utilities, or Gaming.
+- Put libraries, redistributables, codecs, programming languages, and runtimes in `winget.system.dsc.yaml` (headers: Languages, Codecs, Runtimes). Put everything else in `winget.apps.dsc.yaml` (headers: AI, Development, Internet, Media, System, Utilities, Gaming). The system file is applied first, so apps can rely on its runtimes.
+- Add packages under the matching `# --- Category ---` header.
 - Entry format, with a short lowercase `id`:
 
   ```yaml
@@ -50,4 +52,4 @@ This repo describes the system. It doesn't apply itself. Ask before you overwrit
 
 ## Commits
 
-Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) with the changed file or area as the scope. For example: `feat(config.dsc.yaml): add uv package manager` or `feat(user): add qBittorrent config`.
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) with the changed file or area as the scope. For example: `feat(winget.apps.dsc.yaml): add uv package manager` or `feat(user): add qBittorrent config`.

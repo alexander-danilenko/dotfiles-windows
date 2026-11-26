@@ -1,17 +1,12 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
-# winget configuration file
+# winget configuration file: applications and tools
 properties:
   configurationVersion: 0.2.0
   resources:
-    # --- Hardware ---
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Nvidia.CUDA
-      settings: { id: Nvidia.CUDA }
-
     # --- AI ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: chatgpt
-      settings: { id: 9NT1R1C2HH7J }
+      settings: { id: OpenAI.ChatGPT }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: claude
@@ -31,24 +26,17 @@ properties:
       settings: { id: JetBrains.Toolbox }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: node
-      settings: { id: OpenJS.NodeJS.LTS }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: python
-      settings: { id: Python.Python.3.14}
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: jdk-21
-      settings: { id: EclipseAdoptium.Temurin.21.JDK }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: uv
       settings: { id: astral-sh.uv }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: github-cli
       settings: { id: GitHub.cli }
+
+    # NVIDIA GPUs only
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: cuda
+      settings: { id: Nvidia.CUDA }
 
     # --- Internet ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -89,16 +77,8 @@ properties:
 
     # --- Media ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: k-lite-codec-pack
-      settings: { id: CodecGuide.K-LiteCodecPack.Mega }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: handbrake
       settings: { id: HandBrake.HandBrake }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: av1
-      settings: { id: 9MVZQVXJBQ9V }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vlc
@@ -126,88 +106,8 @@ properties:
       settings: { id: Synology.DriveClient }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2005-x64
-      settings: { id: Microsoft.VCRedist.2005.x64 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2005-x86
-      settings: { id: Microsoft.VCRedist.2005.x86 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2008-x64
-      settings: { id: Microsoft.VCRedist.2008.x64 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2008-x86
-      settings: { id: Microsoft.VCRedist.2008.x86 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2010-x64
-      settings: { id: Microsoft.VCRedist.2010.x64 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2010-x86
-      settings: { id: Microsoft.VCRedist.2010.x86 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2012-x64
-      settings: { id: Microsoft.VCRedist.2012.x64 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2012-x86
-      settings: { id: Microsoft.VCRedist.2012.x86 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2013-x64
-      settings: { id: Microsoft.VCRedist.2013.x64 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2013-x86
-      settings: { id: Microsoft.VCRedist.2013.x86 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2015plus-x64
-      settings: { id: Microsoft.VCRedist.2015+.x64 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vcredist-2015plus-x86
-      settings: { id: Microsoft.VCRedist.2015+.x86 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: dotnet-3_1-runtime
-      settings: { id: Microsoft.DotNet.DesktopRuntime.3_1 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: dotnet-5-desktop-runtime
-      settings: { id: Microsoft.DotNet.DesktopRuntime.5 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: dotnet-6-desktop-runtime
-      settings: { id: Microsoft.DotNet.DesktopRuntime.6 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: dotnet-7-desktop-runtime
-      settings: { id: Microsoft.DotNet.DesktopRuntime.7 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: dotnet-8-desktop-runtime
-      settings: { id: Microsoft.DotNet.DesktopRuntime.8 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: sysinternals
       settings: { id: 9P7KNL5RWT25 }
-
-    # - resource: Microsoft.WinGet.DSC/WinGetPackage
-    #   id: directx
-    #   settings: { id: Microsoft.DirectX }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: openal
-      settings: { id: CreativeTechnology.OpenAL }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: xna-redist
-      settings: { id: Microsoft.XNARedist }
 
     # --- Utilities ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -226,9 +126,9 @@ properties:
       id: lockhunter
       settings: { id: CrystalRich.LockHunter }
 
-    # - resource: Microsoft.WinGet.DSC/WinGetPackage
-    #   id: obsidian
-    #   settings: { id: Obsidian.Obsidian }
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: obsidian
+      settings: { id: Obsidian.Obsidian }
 
     # --- Gaming ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage

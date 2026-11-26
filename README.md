@@ -69,16 +69,21 @@ Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
 
 ### 📦 Package Management (WinGet)
 
-Set up WinGet to automatically install all your essential applications from a single configuration file. This approach ensures consistent software installation across different systems and saves time during setup.
+Set up WinGet to automatically install all your essential applications from two configuration files: system components first, then apps. This approach ensures consistent software installation across different systems and saves time during setup.
 
 - Install the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) from Microsoft Store
 - Apply WinGet config by running:
 
   ```powershell
-  # Install all packages from config
-  cd <repo>
-  winget configure --enable; winget configure --accept-configuration-agreements -f files\config.dsc.yaml
+  winget configure --enable
+  # System components: languages, runtimes, codecs, and redistributables
+  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.system.dsc.yaml
+  # Applications
+  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.apps.dsc.yaml
   ```
+
+  > [!NOTE]
+  > These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `files\winget.apps.dsc.yaml`.
 
 ### 🛠️ Development Tools
 
