@@ -20,6 +20,25 @@ properties:
       id: go
       settings: { id: GoLang.Go }
 
+    # MSVC linker and Windows SDK, needed by Rust's default toolchain and native Node/Python modules
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vs-build-tools
+      settings: { id: Microsoft.VisualStudio.BuildTools }
+
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      id: vs-build-tools-cpp
+      dependsOn: [vs-build-tools]
+      directives: { allowPrerelease: true }
+      settings:
+        productId: Microsoft.VisualStudio.Product.BuildTools
+        channelId: VisualStudio.18.Release
+        includeRecommended: true
+        components: [Microsoft.VisualStudio.Workload.VCTools]
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: rust
+      settings: { id: Rustlang.Rustup }
+
     # --- Codecs ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: k-lite-codec-pack
