@@ -76,7 +76,7 @@
     <!-- Text -->
     <g font-family="'Segoe UI Variable Display','Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif" fill="#fff">
       <text class="fade" x="290" y="158" font-size="58" font-weight="600" letter-spacing="-1">Windows 11 Configuration</text>
-      <text class="fade2" x="292" y="204" font-size="22" fill="#b8d4ff" font-family="'Cascadia Code','Cascadia Mono',Consolas,monospace">&gt; winget configure --file winget.apps.dsc.yaml<tspan class="caret" fill="#4cc2ff">▌</tspan></text>
+      <text class="fade2" x="292" y="204" font-size="22" fill="#b8d4ff" font-family="'Cascadia Code','Cascadia Mono',Consolas,monospace">&gt; winget configure --file config.yaml<tspan class="caret" fill="#4cc2ff">▌</tspan></text>
     </g>
   </g>
 </svg>
