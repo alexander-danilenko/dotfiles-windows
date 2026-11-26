@@ -36,7 +36,7 @@ Keep these files short and concrete. State the reason behind a rule instead of u
     settings: { id: Microsoft.VisualStudioCode }
   ```
 
-- For Microsoft Store apps, use the numeric ID from the store URL, such as `9NT1R1C2HH7J` from `apps.microsoft.com/detail/9NT1R1C2HH7J`.
+- Use the `winget` source ID, such as `Mozilla.Firefox`, even when the same app is in the Microsoft Store. Classic installers update themselves, and browser extensions like 1Password's need native messaging, which works less reliably with Store (MSIX) builds. Use a Store ID, such as `9NT1R1C2HH7J` from `apps.microsoft.com/detail/9NT1R1C2HH7J`, only when `winget search <name> --source winget` finds no package.
 - Verify a package ID with `winget show --id <Id>` before adding it, because a wrong ID breaks the whole `winget configure` run.
 - To disable a package, comment it out rather than deleting it. The owner keeps disabled entries for reference.
 
