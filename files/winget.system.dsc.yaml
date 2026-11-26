@@ -28,7 +28,7 @@ properties:
     - resource: Microsoft.VisualStudio.DSC/VSComponents
       id: vs-build-tools-cpp
       dependsOn: [vs-build-tools]
-      directives: { allowPrerelease: true }
+      directives: { allowPrerelease: true, securityContext: elevated } # the VS DSC module refuses to load unelevated
       settings:
         productId: Microsoft.VisualStudio.Product.BuildTools
         channelId: VisualStudio.18.Release
