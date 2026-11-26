@@ -7,11 +7,11 @@ A secure, reproducible Windows 11 setup for development and productivity.
 ```powershell
 winget configure --enable
 
-# System components: languages, runtimes, codecs, and redistributables
-winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.system.dsc.yaml
+# Base: languages, runtimes, codecs, and redistributables
+winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/base.dsc.yaml
 
 # Applications
-winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.apps.dsc.yaml
+winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/apps.dsc.yaml
 
 # User configs: copies the repo's user\ folder over your profile, overwriting matching files
 $z="$env:TEMP\dotfiles.zip"; irm https://github.com/alexander-danilenko/dotfiles-windows/archive/refs/heads/main.zip -OutFile $z; Expand-Archive $z "$env:TEMP\dotfiles" -Force; robocopy "$env:TEMP\dotfiles\dotfiles-windows-main\user" $HOME /E /XF CLAUDE.md
@@ -92,14 +92,14 @@ Set up WinGet to automatically install all your essential applications from two 
 
   ```powershell
   winget configure --enable
-  # System components: languages, runtimes, codecs, and redistributables
-  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.system.dsc.yaml
+  # Base: languages, runtimes, codecs, and redistributables
+  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/base.dsc.yaml
   # Applications
-  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.apps.dsc.yaml
+  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/apps.dsc.yaml
   ```
 
 > [!NOTE]
-> These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `files\winget.apps.dsc.yaml`.
+> These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `wingetpps.dsc.yaml`.
 
 ### 🛠️ Development Tools
 
