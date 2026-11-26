@@ -67,9 +67,9 @@ properties:
       id: firefox
       settings: { id: Mozilla.Firefox }
 
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: slack
-      settings: { id: SlackTechnologies.Slack }
+    # - resource: Microsoft.WinGet.DSC/WinGetPackage
+    #   id: slack
+    #   settings: { id: SlackTechnologies.Slack }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: telegram
@@ -143,9 +143,9 @@ properties:
       id: steam
       settings: { id: Valve.Steam }
 
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: epic-games
-      settings: { id: EpicGames.EpicGamesLauncher }
+    # - resource: Microsoft.WinGet.DSC/WinGetPackage
+    #   id: epic-games
+    #   settings: { id: EpicGames.EpicGamesLauncher }
 
     # - resource: Microsoft.WinGet.DSC/WinGetPackage
     #   id: battle-net
