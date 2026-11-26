@@ -36,7 +36,8 @@ Keep these files short and concrete. State the reason behind a rule instead of u
     settings: { id: Microsoft.VisualStudioCode }
   ```
 
-- Use the `winget` source ID, such as `Mozilla.Firefox`, even when the same app is in the Microsoft Store. Classic installers update themselves, and browser extensions like 1Password's need native messaging, which works less reliably with Store (MSIX) builds. Use a Store ID, such as `9NT1R1C2HH7J` from `apps.microsoft.com/detail/9NT1R1C2HH7J`, only when `winget search <name> --source winget` finds no package.
+- Use the `winget` source ID, such as `Mozilla.Firefox`, even when the same app is in the Microsoft Store. Classic installers update themselves, and browser extensions like 1Password's need native messaging, which works less reliably with Store (MSIX) builds. Use a Store ID, such as `9PM860492SZD` from `apps.microsoft.com/detail/9PM860492SZD`, only when `winget search <name> --source winget` finds no package, or when the winget package can't install unattended (it needs admin, or downloads from an unversioned URL whose hash goes stale). Leave a one-line comment on that entry saying why, so it isn't switched back.
+- Don't add `securityContext: elevated` to a `WinGetPackage` unit. In winget 1.30 the elevated helper can't reach the WinGet COM server and fails with `0x800706BA` (RPC server unavailable). `Microsoft.VisualStudio.DSC/VSComponents` still needs it.
 - Verify a package ID with `winget show --id <Id>` before adding it, because a wrong ID breaks the whole `winget configure` run.
 - To disable a package, comment it out rather than deleting it. The owner keeps disabled entries for reference.
 
