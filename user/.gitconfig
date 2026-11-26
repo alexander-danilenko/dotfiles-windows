@@ -1,6 +1,12 @@
 [include]
   path = ~/.gitconfig.local
 
+# Per-folder config, such as a work email for repos under one folder.
+# On Windows: use forward slashes, and gitdir/i: so the match ignores case.
+# ~ is %USERPROFILE%. A drive path also works: "gitdir/i:D:/Work/".
+# [includeIf "gitdir/i:~/Work/"]
+#   path = ~/Work/.gitconfig
+
 [core]
   autocrlf   = input
   safecrlf   = false
