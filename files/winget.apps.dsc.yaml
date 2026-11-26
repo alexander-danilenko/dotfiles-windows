@@ -6,7 +6,7 @@ properties:
     # --- AI ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: chatgpt
-      settings: { id: OpenAI.ChatGPT }
+      settings: { id: 9PLM9XGG6VKS }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: claude
@@ -115,7 +115,7 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: sysinternals
-      settings: { id: Microsoft.Sysinternals.Suite }
+      settings: { id: 9P7KNL5RWT25 }
 
     # --- Utilities ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
