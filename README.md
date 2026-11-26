@@ -7,11 +7,14 @@ A secure, reproducible Windows 11 setup for development and productivity.
 ```powershell
 winget configure --enable
 
-# Base: languages, runtimes, codecs, and redistributables
+# Base: codecs, runtimes, and redistributables
 winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/base.dsc.yaml
 
 # Applications
 winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/apps.dsc.yaml
+
+# Development: languages, tools, and VS Code extensions
+winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/dev.dsc.yaml
 
 # User configs: copies the repo's user\ folder over your profile, overwriting matching files
 $z="$env:TEMP\dotfiles.zip"; irm https://github.com/alexander-danilenko/dotfiles-windows/archive/refs/heads/main.zip -OutFile $z; Expand-Archive $z "$env:TEMP\dotfiles" -Force; robocopy "$env:TEMP\dotfiles\dotfiles-windows-main\user" $HOME /E /XF CLAUDE.md
@@ -85,29 +88,28 @@ Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
 
 ### 📦 Package Management (WinGet)
 
-Set up WinGet to automatically install all your essential applications from two configuration files: system components first, then apps. This approach ensures consistent software installation across different systems and saves time during setup.
+Set up WinGet to automatically install all your essential applications from three configuration files: the base layer of codecs and runtimes first, then apps, then the development setup described in [Development Tools](#️-development-tools). This approach ensures consistent software installation across different systems and saves time during setup.
 
 - Install the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) from Microsoft Store
 - Apply WinGet config by running:
 
   ```powershell
   winget configure --enable
-  # Base: languages, runtimes, codecs, and redistributables
+  # Base: codecs, runtimes, and redistributables
   winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/base.dsc.yaml
   # Applications
   winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/apps.dsc.yaml
   ```
 
 > [!NOTE]
-> These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `wingetpps.dsc.yaml`.
+> These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `winget\apps.dsc.yaml`.
 
 ### 🛠️ Development Tools
 
-Install essential development tools and VS Code extensions to create a productive coding environment. All development applications are included in the WinGet configuration, while VS Code extensions are managed separately for better control. Run the extension script to set up your preferred development tools.
+Install programming languages, build tools, developer apps, and VS Code extensions from a separate WinGet configuration. It includes Node.js, Python, Java, Go, Rust with the MSVC build tools, VS Code, Git, and the GitHub CLI:
 
-Install VS Code extensions:
 ```powershell
-irm https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/vscode-extensions.ps1 | iex
+winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/dev.dsc.yaml
 ```
 
 ### 🎨 ArtCraft Apps (Optional)

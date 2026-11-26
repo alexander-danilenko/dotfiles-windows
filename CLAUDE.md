@@ -16,9 +16,9 @@ Keep these files short and concrete. State the reason behind a rule instead of u
 
 | Path | Contents |
 |------|----------|
-| `winget/base.dsc.yaml` | WinGet DSC: system components, languages, runtimes, codecs, redistributables |
+| `winget/base.dsc.yaml` | WinGet DSC: base layer of codecs, runtimes, and redistributables, applied first |
 | `winget/apps.dsc.yaml` | WinGet DSC: all other apps |
-| `files/vscode-extensions.ps1` | VS Code extension installer |
+| `winget/dev.dsc.yaml` | WinGet DSC: programming languages, build tools, developer apps, and VS Code extensions |
 | `user/` | Mirror of `%USERPROFILE%`. See `user/CLAUDE.md` for the path and cleanup rules |
 | `user/.gitconfig` | Git config (aliases, rebase-based pulls, `autocrlf = input`). Identity and machine-specific values go in `~/.gitconfig.local`, which isn't in the repo |
 | `README.md` | Setup guide for a fresh Windows install |
@@ -26,7 +26,10 @@ Keep these files short and concrete. State the reason behind a rule instead of u
 
 ## WinGet DSC (`winget/*.dsc.yaml`)
 
-- Put libraries, redistributables, codecs, programming languages, and runtimes in `base.dsc.yaml` (headers: Languages, Codecs, Runtimes). Put everything else in `apps.dsc.yaml` (headers: AI, Development, Internet, Media, System, Utilities, Gaming). The base file is applied first, so apps can rely on its runtimes.
+- Put libraries, redistributables, codecs, and runtimes in `base.dsc.yaml` (headers: Codecs, Runtimes). The base file is applied first, so the other files can rely on its runtimes.
+- Put programming languages, build tools, developer apps, and VS Code extensions in `dev.dsc.yaml` (headers: Languages, Tools, NVIDIA GPUs only, VS Code extensions).
+- Put everything else in `apps.dsc.yaml` (headers: AI, Internet, Media, System, Utilities, Gaming).
+- Add a VS Code extension as a `Microsoft.VSCode.Dsc/VSCodeExtension` unit with `dependsOn: [vscode]`, `directives: { allowPrerelease: true }` (every published version of the module is a prerelease), `settings: { Name: <extension ID> }`, and the lowercased extension ID as `id`. `dependsOn` only works within one file, which is why the extensions live next to VS Code.
 - Add packages under the matching `# --- Category ---` header.
 - Entry format, with a short lowercase `id`:
 

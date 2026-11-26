@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
-# winget configuration file: applications and tools
+# winget configuration file: applications
 properties:
   configurationVersion: 0.2.0
   resources:
@@ -19,32 +19,6 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: herdr
       settings: { id: Herdr.Herdr }
-
-    # --- Development ---
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vscode
-      settings: { id: Microsoft.VisualStudioCode }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: git
-      settings: { id: Git.Git }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: jetbrains-toolbox
-      settings: { id: JetBrains.Toolbox }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: uv
-      settings: { id: astral-sh.uv }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: github-cli
-      settings: { id: GitHub.cli }
-
-    # --- NVIDIA GPUs only ---
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: cuda
-      settings: { id: Nvidia.CUDA }
 
     # --- Internet ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage

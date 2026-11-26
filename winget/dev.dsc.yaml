@@ -1,0 +1,133 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# winget configuration file: development languages, tools, and VS Code extensions
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    # --- Languages ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: node
+      settings: { id: OpenJS.NodeJS.LTS }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: python
+      settings: { id: Python.Python.3.15 }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: jdk-25
+      settings: { id: EclipseAdoptium.Temurin.25.JDK }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: go
+      settings: { id: GoLang.Go }
+
+    # MSVC linker and Windows SDK, needed by Rust's default toolchain and native Node/Python modules
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vs-build-tools
+      settings: { id: Microsoft.VisualStudio.BuildTools }
+
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      id: vs-build-tools-cpp
+      dependsOn: [vs-build-tools]
+      directives: { allowPrerelease: true, securityContext: elevated } # the VS DSC module refuses to load unelevated
+      settings:
+        productId: Microsoft.VisualStudio.Product.BuildTools
+        channelId: VisualStudio.18.Release
+        includeRecommended: true
+        components: [Microsoft.VisualStudio.Workload.VCTools]
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: rust
+      settings: { id: Rustlang.Rustup }
+
+    # --- Tools ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vscode
+      settings: { id: Microsoft.VisualStudioCode }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: git
+      settings: { id: Git.Git }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: jetbrains-toolbox
+      settings: { id: JetBrains.Toolbox }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: uv
+      settings: { id: astral-sh.uv }
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: github-cli
+      settings: { id: GitHub.cli }
+
+    # --- NVIDIA GPUs only ---
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: cuda
+      settings: { id: Nvidia.CUDA }
+
+    # --- VS Code extensions ---
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: github.vscode-github-actions
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: GitHub.vscode-github-actions }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: acarreiro.calculate
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: acarreiro.calculate }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: dakara.transformer
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: dakara.transformer }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: dotenv.dotenv-vscode
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: dotenv.dotenv-vscode }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: editorconfig.editorconfig
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: editorconfig.editorconfig }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: github.github-vscode-theme
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: github.github-vscode-theme }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: golang.go
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: golang.go }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: ms-python.python
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: ms-python.python }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: pkief.material-icon-theme
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: pkief.material-icon-theme }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: tommasov.hosts
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: tommasov.hosts }
+
+    - resource: Microsoft.VSCode.Dsc/VSCodeExtension
+      id: yzhang.markdown-all-in-one
+      dependsOn: [vscode]
+      directives: { allowPrerelease: true }
+      settings: { Name: yzhang.markdown-all-in-one }

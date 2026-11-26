@@ -1,44 +1,8 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
-# winget configuration file: system components, languages, runtimes, codecs, and redistributables
+# winget configuration file: base layer of codecs, runtimes, and redistributables, applied first
 properties:
   configurationVersion: 0.2.0
   resources:
-    # --- Languages ---
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: node
-      settings: { id: OpenJS.NodeJS.LTS }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: python
-      settings: { id: Python.Python.3.15 }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: jdk-25
-      settings: { id: EclipseAdoptium.Temurin.25.JDK }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: go
-      settings: { id: GoLang.Go }
-
-    # MSVC linker and Windows SDK, needed by Rust's default toolchain and native Node/Python modules
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: vs-build-tools
-      settings: { id: Microsoft.VisualStudio.BuildTools }
-
-    - resource: Microsoft.VisualStudio.DSC/VSComponents
-      id: vs-build-tools-cpp
-      dependsOn: [vs-build-tools]
-      directives: { allowPrerelease: true, securityContext: elevated } # the VS DSC module refuses to load unelevated
-      settings:
-        productId: Microsoft.VisualStudio.Product.BuildTools
-        channelId: VisualStudio.18.Release
-        includeRecommended: true
-        components: [Microsoft.VisualStudio.Workload.VCTools]
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: rust
-      settings: { id: Rustlang.Rustup }
-
     # --- Codecs ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: k-lite-codec-pack
