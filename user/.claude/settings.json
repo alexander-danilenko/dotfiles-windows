@@ -2,7 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "env": {
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0"
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
+    "PONYTAIL_DEFAULT_MODE": "ultra"
   },
   "attribution": {
     "commit": "",
@@ -47,13 +48,27 @@
     "cortex-web@cortex-claude-code-plugins": true,
     "cortex-python@cortex-claude-code-plugins": true,
     "cortex-testing@cortex-claude-code-plugins": true,
-    "cortex-modernization@cortex-claude-code-plugins": true
+    "cortex-modernization@cortex-claude-code-plugins": true,
+    "compound-engineering@compound-engineering-plugin": true,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "cortex-claude-code-plugins": {
       "source": {
         "source": "github",
         "repo": "alexander-danilenko/cortex-claude-code-plugins"
+      }
+    },
+    "compound-engineering-plugin": {
+      "source": {
+        "source": "github",
+        "repo": "EveryInc/compound-engineering-plugin"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
       }
     }
   },
