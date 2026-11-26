@@ -45,15 +45,15 @@ properties:
     # --- Internet ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: 1password
-      settings: { id: XP99C9G0KRDZ27 }
+      settings: { id: AgileBits.1Password }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: brave
-      settings: { id: XP8C9QZMS2PC1T }
+      settings: { id: Brave.Brave }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: discord
-      settings: { id: XPDC2RH70K22MN }
+      settings: { id: Discord.Discord }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: chrome
@@ -61,11 +61,11 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: firefox
-      settings: { id: 9NZVDKPMR9RD }
+      settings: { id: Mozilla.Firefox }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: slack
-      settings: { id: 9WZDNCRDK3WP }
+      settings: { id: SlackTechnologies.Slack }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: telegram
@@ -73,7 +73,7 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vivaldi
-      settings: { id: XP99GVQDX7JPR4 }
+      settings: { id: Vivaldi.Vivaldi }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: qbittorrent
@@ -86,7 +86,7 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vlc
-      settings: { id: XPDM1ZW6815MQM }
+      settings: { id: VideoLAN.VLC }
 
     # --- System ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -103,7 +103,7 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: rufus
-      settings: { id: 9PC3H3V7Q9CH }
+      settings: { id: Rufus.Rufus }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: synology-drive
@@ -111,7 +111,7 @@ properties:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: sysinternals
-      settings: { id: 9P7KNL5RWT25 }
+      settings: { id: Microsoft.Sysinternals.Suite }
 
     # --- Utilities ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
