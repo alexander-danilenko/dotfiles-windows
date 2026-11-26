@@ -1,6 +1,6 @@
 <h1 align="center"><img src="assets/banner.svg" alt="🪟 Windows 11 Configuration" width="100%"></h1>
 
-A secure, reproducible Windows 11 setup for development and productivity.
+A reproducible Windows 11 setup for development and daily use.
 
 ## 🚀 TL;DR
 
@@ -22,72 +22,61 @@ $z="$env:TEMP\dotfiles.zip"; irm https://github.com/alexander-danilenko/dotfiles
 
 ---
 
-
 ## 💿 Windows 11 Installation Media
-
-Get your Windows 11 installation ready with clean, bloatware-free media that ensures a smooth setup experience. Using the right installation source prevents unnecessary software and provides a solid foundation for your system. Download the ISO and create a bootable USB drive following the simple steps below.
 
 ### 📥 Download Windows 11 ISO image
 
-**Download Windows 11 ISO** file from one of two sources:
+Download the ISO from one of these sources:
+
 - https://massgrave.dev/windows_11_links
 - https://www.microsoft.com/software-download/windows11
 
 > [!TIP]
-> [massgrave.dev](https://massgrave.dev/windows_11_links) download source contains **Windows 11 Business edition**, which is recommended to use as it doesn't include consumer bloatware, Microsoft Store ads, or preinstalled games like Candy Crush.
+> Use the **Windows 11 Business** edition from massgrave.dev. It does not include consumer bloatware, Microsoft Store ads, or preinstalled games.
 
 ### 💾 Create Bootable USB with Rufus
 
-- Download and install [Rufus](https://rufus.ie/)
-- Insert USB drive (8GB+ recommended)
-- Run Rufus app
-- Click "SELECT" and choose the downloaded Windows 11 ISO
-- Keep default settings (GPT partition scheme, UEFI target system)
-- Click "START" and wait for completion
+1. Install [Rufus](https://rufus.ie/).
+2. Connect a USB drive of 8 GB or more.
+3. Run Rufus, click **SELECT**, and select the ISO.
+4. Keep the default settings (GPT, UEFI).
+5. Click **START**.
 
 ## ⚡ Quick Setup
 
-Set up your Windows 11 system for development and productivity with these essential post-installation steps. These configurations establish the security policies, package management, and development tools that will serve as your system's foundation. Work through these steps in order to avoid common setup issues and get everything running smoothly.
+Do these steps in this order after you install Windows.
 
 ### 🔑 Windows Activation
 
-Activate your Windows 11 installation to unlock all features and ensure you're running a legitimate copy. While legitimate license keys are preferred, community activation tools provide an alternative when needed. 
-
-> [!IMPORTANT]
-> Always prioritize official licensing methods and use community solutions responsibly as the last resort!
-
-- https://github.com/massgravel/Microsoft-Activation-Scripts
+Activate Windows with a license key. If you do not have a key, use [Microsoft Activation Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) as the last option.
 
 ### 🔒 PowerShell Security
 
-Configure PowerShell to run setup scripts safely while maintaining security for downloaded content. This policy allows locally created scripts to run while requiring digital signatures for scripts from the internet. Run this command to enable the configuration scripts in this guide:
+Let local scripts run, and require a signature for scripts from the internet:
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
 
-
 ### 📦 Package Management (WinGet)
 
-Set up WinGet to automatically install all your essential applications from three configuration files: the base layer of codecs and runtimes first, then apps, then the development setup described in [Development Tools](#️-development-tools). This approach ensures consistent software installation across different systems and saves time during setup.
+1. Install [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) from the Microsoft Store.
+2. Apply the base config first, then the apps config:
 
-- Install the [App Installer](https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1) from Microsoft Store
-- Apply WinGet config by running:
-
-  ```powershell
-  winget configure --enable
-  # Base: codecs, runtimes, and redistributables
-  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/base.dsc.yaml
-  # Applications
-  winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/apps.dsc.yaml
-  ```
+   ```powershell
+   winget configure --enable
+   # Base: codecs, runtimes, and redistributables
+   winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/base.dsc.yaml
+   # Applications
+   winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/apps.dsc.yaml
+   ```
 
 > [!NOTE]
-> These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `winget\apps.dsc.yaml`.
+> The commands use the files on the `main` branch, so you do not need to clone the repo. To apply local changes that you did not push, use the local path, for example `winget\apps.dsc.yaml`.
 
 ### 🛠️ Development Tools
 
-Install programming languages, build tools, developer apps, and VS Code extensions from a separate WinGet configuration. It includes Node.js, Python, Java, Go, Rust with the MSVC build tools, VS Code, Git, and the GitHub CLI:
+This config installs Node.js, Python, Java, Go, Rust with the MSVC build tools, VS Code with extensions, Git, and GitHub CLI:
 
 ```powershell
 winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/winget/dev.dsc.yaml
@@ -95,11 +84,11 @@ winget configure --accept-configuration-agreements -f https://raw.githubusercont
 
 ### 🎨 ArtCraft Apps (Optional)
 
-[ArtCraft](https://getartcraft.com/) makes open-source alternatives to professional creative and office apps. Download the ArtCraft Launcher from its site to install the apps you choose and keep them up to date; it isn't in WinGet.
+[ArtCraft](https://getartcraft.com/) makes open-source alternatives to professional creative and office apps. The ArtCraft Launcher is not in WinGet. Download it from the ArtCraft site, then use it to install and update the apps.
 
 ### 🐧 WSL (Optional)
 
-Add Linux compatibility to your Windows system for cross-platform development and testing. WSL provides a lightweight Linux environment that integrates seamlessly with Windows while maintaining excellent performance. Install Debian as your default distribution and configure WSL 2 for the best experience.
+Install WSL 2 with Debian:
 
 ```powershell
 wsl --install --distribution Debian
@@ -109,11 +98,9 @@ wsl --set-default-version 2
 
 ## ⚙️ System Configuration
 
-Fine-tune your Windows 11 system with these advanced optimizations that boost performance and resolve common issues. These settings optimize power management, fix time sync problems in dual-boot setups, and improve overall system stability. Apply these configurations after your initial setup to get the most out of your Windows experience.
-
 ### 🔋 Power Management
 
-Optimize your system's power consumption and prevent unwanted wake-ups that can drain battery or cause system instability. These settings disable hibernation and prevent devices from waking your computer unexpectedly.
+Disable hibernation, and stop devices from waking the PC:
 
 ```powershell
 # Disable hibernation
@@ -125,7 +112,7 @@ powercfg -devicequery wake_armed | Where-Object { $_.Trim() -ne 'NONE' } | ForEa
 
 ### ⏰ Dual-boot Time Sync
 
-Fix time synchronization issues when running Windows alongside Linux in a dual-boot setup. This configuration makes Windows use UTC time instead of local time, preventing clock drift between operating systems.
+If you dual-boot with Linux, set Windows to keep the hardware clock in UTC. Linux also uses UTC, so the clock stays correct in both systems.
 
 ```powershell
 # Set Windows to use UTC (revert with value 0)
@@ -134,36 +121,30 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformati
 
 ## 🔐 Privacy & Security
 
-Take control of your Windows 11 privacy and security with these essential configurations that protect your data and system integrity. These settings reduce unnecessary telemetry and data collection while keeping your system functional and secure.
-
 ### 🛡️ O&O ShutUp10++
 
-Install [O&O ShutUp10++](https://www.oo-software.com/en/shutup10) for privacy settings:
+Install [O&O ShutUp10++](https://www.oo-software.com/en/shutup10):
+
 ```powershell
 winget install OO-Software.ShutUp10
 ```
 
-Run in powershell as administrator:
+Run it in PowerShell as administrator:
 
 ```powershell
 shutup10.exe
 ```
 
 > [!WARNING]
-> Create a system restore point before applying any privacy changes.
+> Create a system restore point before you change privacy settings.
 
 > [!TIP]
-> Use the `🟢 Only recommended settings` preset. 
-> 
-> Apply changes responsibly - make sure you read and understand what each setting does before applying it.
-
+> Use the `🟢 Only recommended settings` preset. Read each setting before you apply it.
 
 ## 🔧 Troubleshooting
 
-Find quick solutions to common Windows 11 issues that might pop up during setup or daily use. These troubleshooting steps cover frequent problems like application freezes, network issues, and authentication prompts. Keep this section handy when problems arise to get your system back on track quickly.
-
-| Issue | Solution |
-|-------|----------|
-| Firefox video freeze | Set `widget.windows.window_occlusion_tracking.enabled` to `false` in `about:config` |
-| Network issues | `ipconfig /flushdns; netsh winsock reset` |
-| Password prompts | Run `netplwiz` |
+| Problem | Fix |
+|---------|-----|
+| Firefox video freezes | Set `widget.windows.window_occlusion_tracking.enabled` to `false` in `about:config` |
+| Network failure | `ipconfig /flushdns; netsh winsock reset` |
+| Password prompt at sign-in | Run `netplwiz` |
