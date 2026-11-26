@@ -6,10 +6,13 @@ A secure, reproducible Windows 11 setup for development and productivity.
 
 ```powershell
 winget configure --enable
+
 # System components: languages, runtimes, codecs, and redistributables
 winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.system.dsc.yaml
+
 # Applications
 winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.apps.dsc.yaml
+
 # User configs: copies the repo's user\ folder over your profile, overwriting matching files
 $z="$env:TEMP\dotfiles.zip"; irm https://github.com/alexander-danilenko/dotfiles-windows/archive/refs/heads/main.zip -OutFile $z; Expand-Archive $z "$env:TEMP\dotfiles" -Force; robocopy "$env:TEMP\dotfiles\dotfiles-windows-main\user" $HOME /E /XF CLAUDE.md
 ```
