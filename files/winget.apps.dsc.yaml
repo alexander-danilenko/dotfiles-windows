@@ -16,6 +16,10 @@ properties:
       id: claude-code
       settings: { id: Anthropic.ClaudeCode }
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: herdr
+      settings: { id: Herdr.Herdr }
+
     # --- Development ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vscode
