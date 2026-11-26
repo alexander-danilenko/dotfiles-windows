@@ -1,6 +1,24 @@
 [include]
   path = ~/.gitconfig.local
 
+# Identity and signing key go in ~/.gitconfig.local, not here.
+# [user]
+#   name       = John Smith
+#   email      = john.smith@example.com
+#   signingkey = ~/.ssh/id_ed25519.pub
+
+# Sign commits with an SSH key. allowed_signers lets git verify them locally.
+[commit]
+  gpgsign    = true
+
+[gpg]
+  format     = ssh
+
+# Create allowed_signers from PowerShell:
+# "$(git config user.email) $(Get-Content ~/.ssh/id_ed25519.pub)" | Set-Content ~/.ssh/allowed_signers
+[gpg "ssh"]
+  allowedSignersFile = ~/.ssh/allowed_signers
+
 # Per-folder config, such as a work email for repos under one folder.
 # On Windows: use forward slashes, and gitdir/i: so the match ignores case.
 # ~ is %USERPROFILE%. A drive path also works: "gitdir/i:D:/Work/".
@@ -36,7 +54,10 @@
   branch     = auto
 
 [alias]
+  a          = apply --index
   c          = commit -m
+  fa         = fetch --all
+  ff         = !git pull origin $(git branch --show-current) --ff-only
   hidden     = !git ls-files -v | grep "^[[:lower:]]"
   hide       = update-index --assume-unchanged
   history    = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -48,3 +69,12 @@
   pmm        = pull origin master --rebase --autostash
   s          = status --short --branch
   unhide     = update-index --no-assume-unchanged
+
+[fetch]
+  prune      = true
+
+[filter "lfs"]
+  clean      = git-lfs clean -- %f
+  smudge     = git-lfs smudge -- %f
+  process    = git-lfs filter-process
+  required   = true
