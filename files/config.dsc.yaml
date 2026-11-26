@@ -7,7 +7,7 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Nvidia.CUDA
       settings: { id: Nvidia.CUDA }
-   
+
     # --- AI ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: chatgpt
@@ -21,10 +21,6 @@ properties:
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vscode
       settings: { id: Microsoft.VisualStudioCode }
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: cursor
-      settings: { id: Anysphere.Cursor }
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: git
