@@ -82,8 +82,8 @@ Set up WinGet to automatically install all your essential applications from two 
   winget configure --accept-configuration-agreements -f https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/winget.apps.dsc.yaml
   ```
 
-  > [!NOTE]
-  > These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `files\winget.apps.dsc.yaml`.
+> [!NOTE]
+> These commands use the files on the `main` branch, so you don't need to clone the repo first. To apply local changes that you haven't pushed, pass the local path instead, such as `files\winget.apps.dsc.yaml`.
 
 ### 🛠️ Development Tools
 

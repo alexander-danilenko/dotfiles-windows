@@ -46,7 +46,7 @@ This repo describes the system. It doesn't apply itself. Ask before you overwrit
 ## Documentation
 
 - Write in GitHub Flavored Markdown, following the Microsoft Writing Style Guide.
-- Use GitHub alerts (`> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`) for callouts.
+- Use GitHub alerts (`> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`) for callouts. Put them at the root level with no indentation, never inside a list or nested block, because GitHub renders nested alerts as plain blockquotes.
 - Mermaid diagrams must render on GitHub, so don't put Markdown lists inside nodes.
 - When a change affects setup steps, update `README.md` in the same commit.
 
