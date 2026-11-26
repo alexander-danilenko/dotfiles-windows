@@ -54,7 +54,6 @@ This repo describes the system. It doesn't apply itself. Ask before you overwrit
 - Use GitHub alerts (`> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`) for callouts. Put them at the root level with no indentation, never inside a list or nested block, because GitHub renders nested alerts as plain blockquotes.
 - Mermaid diagrams must render on GitHub, so don't put Markdown lists inside nodes.
 - When a change affects setup steps, update `README.md` in the same commit.
-- When you add, rename, move, or remove a `##` or `###` heading in `README.md`, update its table of contents in the same edit, in document order. GitHub drops emoji from anchors but keeps the variation selector, so `### 🐧 WSL (Optional)` becomes `#-wsl-optional` and `### 🛠️ Development Tools` becomes `#️-development-tools`. TL;DR sits above the table of contents and stays out of it.
 
 ## Git
 
