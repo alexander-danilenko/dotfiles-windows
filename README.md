@@ -26,6 +26,7 @@ $z="$env:TEMP\dotfiles.zip"; irm https://github.com/alexander-danilenko/dotfiles
   - [🔒 PowerShell Security](#-powershell-security)
   - [📦 Package Management (WinGet)](#-package-management-winget)
   - [🛠️ Development Tools](#️-development-tools)
+  - [🎨 ArtCraft Apps (Optional)](#-artcraft-apps-optional)
   - [🐧 WSL (Optional)](#-wsl-optional)
 - [⚙️ System Configuration](#️-system-configuration)
   - [🔋 Power Management](#-power-management)
@@ -105,6 +106,32 @@ Install VS Code extensions:
 ```powershell
 irm https://raw.githubusercontent.com/alexander-danilenko/dotfiles-windows/main/files/vscode-extensions.ps1 | iex
 ```
+
+### 🎨 ArtCraft Apps (Optional)
+
+[ArtCraft](https://getartcraft.com/) makes open-source alternatives to Adobe, Microsoft Office, and other professional apps:
+
+| App | Alternative to |
+|-----|----------------|
+| <img src="https://getartcraft.com/images/apps/photocraft/icon.webp" width="16" height="16" alt="" /> [PhotoCraft](https://getartcraft.com/apps/photocraft) | Adobe Photoshop |
+| <img src="https://getartcraft.com/images/apps/lightcraft/icon.webp" width="16" height="16" alt="" /> [LightCraft](https://getartcraft.com/apps/lightcraft) | Adobe Lightroom |
+| <img src="https://getartcraft.com/images/apps/vectorcraft/icon.webp" width="16" height="16" alt="" /> [VectorCraft](https://getartcraft.com/apps/vectorcraft) | Adobe Illustrator |
+| <img src="https://getartcraft.com/images/apps/designcraft/icon.webp" width="16" height="16" alt="" /> [DesignCraft](https://getartcraft.com/apps/designcraft) | Adobe InDesign |
+| <img src="https://getartcraft.com/images/apps/figcraft/icon.webp" width="16" height="16" alt="" /> [FigCraft](https://getartcraft.com/apps/figcraft) | Figma |
+| <img src="https://getartcraft.com/images/apps/filmcraft/icon.webp" width="16" height="16" alt="" /> [FilmCraft](https://getartcraft.com/apps/filmcraft) | Adobe Premiere Pro |
+| <img src="https://getartcraft.com/images/apps/effectcraft/icon.webp" width="16" height="16" alt="" /> [EffectCraft](https://getartcraft.com/apps/effectcraft) | Adobe After Effects |
+| <img src="https://getartcraft.com/images/apps/anicraft/icon.webp" width="16" height="16" alt="" /> [AniCraft](https://getartcraft.com/apps/anicraft) | Adobe Animate |
+| <img src="https://getartcraft.com/images/apps/pdfcraft/icon.webp" width="16" height="16" alt="" /> [PdfCraft](https://getartcraft.com/apps/pdfcraft) | Adobe Acrobat |
+| <img src="https://getartcraft.com/images/apps/wordcraft/icon.webp" width="16" height="16" alt="" /> [WordCraft](https://getartcraft.com/apps/wordcraft) | Microsoft Word |
+| <img src="https://getartcraft.com/images/apps/gridcraft/icon.webp" width="16" height="16" alt="" /> [GridCraft](https://getartcraft.com/apps/gridcraft) | Microsoft Excel |
+| <img src="https://getartcraft.com/images/apps/deckcraft/icon.webp" width="16" height="16" alt="" /> [DeckCraft](https://getartcraft.com/apps/deckcraft) | Microsoft PowerPoint |
+| <img src="https://getartcraft.com/images/apps/soundcraft/icon.webp" width="16" height="16" alt="" /> [SoundCraft](https://getartcraft.com/apps/soundcraft) | Avid Pro Tools |
+| <img src="https://getartcraft.com/images/apps/cadcraft/icon.webp" width="16" height="16" alt="" /> [CADCraft](https://getartcraft.com/apps/cadcraft) | Autodesk AutoCAD |
+| <img src="https://getartcraft.com/images/apps/materialcraft/icon.webp" width="16" height="16" alt="" /> [MaterialCraft](https://getartcraft.com/apps/materialcraft) | Node-based procedural material designers |
+| <img src="https://getartcraft.com/images/apps/texturecraft/icon.webp" width="16" height="16" alt="" /> [TextureCraft](https://getartcraft.com/apps/texturecraft) | 3D texture painting tools |
+| <img src="https://getartcraft.com/images/apps/craft-anything/icon.webp" width="16" height="16" alt="" /> [Craft Anything](https://getartcraft.com/apps/craft-anything) | Rebuilding a website, app, or game with AI |
+
+The ArtCraft Launcher installs the apps you choose and keeps them up to date. The launcher isn't in WinGet, so install it manually.
 
 ### 🐧 WSL (Optional)
 
