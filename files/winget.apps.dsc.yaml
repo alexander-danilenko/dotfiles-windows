@@ -41,7 +41,7 @@ properties:
       id: github-cli
       settings: { id: GitHub.cli }
 
-    # NVIDIA GPUs only
+    # --- NVIDIA GPUs only ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: cuda
       settings: { id: Nvidia.CUDA }
