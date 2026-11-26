@@ -16,6 +16,10 @@ properties:
       id: jdk-25
       settings: { id: EclipseAdoptium.Temurin.25.JDK }
 
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: go
+      settings: { id: GoLang.Go }
+
     # --- Codecs ---
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: k-lite-codec-pack
